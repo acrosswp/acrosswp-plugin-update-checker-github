@@ -69,13 +69,25 @@ class AcrossWP_Plugin_Update_Checker_Github {
 	 */
 	public function plugin_updater() {
 
-		$myUpdateChecker = PucFactory::buildUpdateChecker(
-			'https://github.com/user-name/repo-name/',
-			__FILE__,
-			'unique-plugin-or-theme-slug'
-		);
-		
-		//Set the branch that contains the stable release.
-		$myUpdateChecker->setBranch('stable-branch-name');
+		/**
+		 * Check if the $this->get_packages() is empty or not
+		 */
+		if( ! empty( $this->get_packages() ) ) {
+			foreach ( $this->get_packages() as $package ) {
+				$github_repo = $package['repo'];
+				$file_path = $package['file_path'];
+				$plugin_name_slug = $package['plugin_name_slug'];
+				$release_branch = $package['release_branch'];
+				
+				$myUpdateChecker = PucFactory::buildUpdateChecker(
+					$github_repo,
+					$file_path,
+					$plugin_name_slug
+				);
+				
+				//Set the branch that contains the stable release.
+				$myUpdateChecker->setBranch( $release_branch );
+			}
+		}
 	}
 }
