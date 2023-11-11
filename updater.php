@@ -14,7 +14,7 @@ use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
  * @subpackage Post_Anonymously/includes
  */
 
-if( ! class_exists( 'AcrossWP_Plugin_Update' ) ) {
+if( ! class_exists( 'AcrossWP_Plugin_Update_Checker_Github' ) ) {
 	/**
 	 * Fired during plugin licenses.
 	 *
