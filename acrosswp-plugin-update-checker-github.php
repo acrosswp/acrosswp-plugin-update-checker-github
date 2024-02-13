@@ -2,8 +2,6 @@
 // Exit if accessed directly
 defined( 'ABSPATH' ) || exit;
 
-use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
-
 /**
  * Fired during plugin license activations
  *
@@ -15,6 +13,7 @@ use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
  */
 
 if( ! class_exists( 'AcrossWP_Plugin_Update_Checker_Github' ) ) {
+
 	/**
 	 * Fired during plugin licenses.
 	 *
@@ -77,7 +76,7 @@ if( ! class_exists( 'AcrossWP_Plugin_Update_Checker_Github' ) ) {
 					$plugin_name_slug = $package['plugin_name_slug'];
 					$release_branch = $package['release_branch'];
 					
-					$myUpdateChecker = PucFactory::buildUpdateChecker(
+					$myUpdateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory\PucFactory::buildUpdateChecker(
 						$github_repo,
 						$file_path,
 						$plugin_name_slug
