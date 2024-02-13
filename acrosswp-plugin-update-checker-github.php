@@ -70,7 +70,7 @@ if ( ! class_exists( 'AcrossWP_Plugin_Update_Checker_Github' ) ) {
 			/**
 			 * Action to do update for the plugins
 			 */
-			add_action( 'init', array( $this, 'plugin_updater' ), 1000 );
+			add_action( 'admin_init', array( $this, 'plugin_updater' ), 1000 );
 		}
 
 		/**
