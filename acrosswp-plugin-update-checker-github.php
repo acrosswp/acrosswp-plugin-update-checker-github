@@ -88,7 +88,7 @@ if ( ! class_exists( 'AcrossWP_Plugin_Update_Checker_Github' ) ) {
 			/**
 			 * Check if the $this->get_packages() is empty or not
 			 */
-			if( ! empty( $this->get_packages() ) ) {
+			if( is_admin() && ! empty( $this->get_packages() ) ) {
 
 				foreach ( $this->get_packages() as $package ) {
 
