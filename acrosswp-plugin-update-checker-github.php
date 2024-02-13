@@ -76,7 +76,7 @@ if( ! class_exists( 'AcrossWP_Plugin_Update_Checker_Github' ) ) {
 					$plugin_name_slug = $package['plugin_name_slug'];
 					$release_branch = $package['release_branch'];
 					
-					$myUpdateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory\PucFactory::buildUpdateChecker(
+					$myUpdateChecker = \YahnisElsts\PluginUpdateChecker\v5\PucFactory\PucFactory::buildUpdateChecker(
 						$github_repo,
 						$file_path,
 						$plugin_name_slug
